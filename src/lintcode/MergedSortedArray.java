@@ -11,9 +11,10 @@ public class MergedSortedArray {
         // write your code here
     	int total = m+n;
     	for(int i=0;i<n;i++){
-    		A[m+i] = B[i];
+    		A[m+i] = B[i];	//bind two array together
     	}
     	
+    	//sort new array
     	for(int j=0;j<total;j++){
     		for(int k=0;k<total;k++){
     			if(A[j]<A[k]){
@@ -24,6 +25,11 @@ public class MergedSortedArray {
     			}
     		}
     	}
+    }
+    
+    public static void mergeSortedArray2(int[] A, int m, int[] B, int n){
+    	//two pointer
+    	
     }
     
     public static void main(String args[]){
