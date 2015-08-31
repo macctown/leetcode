@@ -1,5 +1,7 @@
 package lintcode;
 
+import java.util.Arrays;
+
 public class ReplaceBlank {
 	/**
      * @param string: An array of Char
@@ -22,8 +24,9 @@ public class ReplaceBlank {
         }
     	newlength = length + 2*count;
     	
-    	//For modify origin str[], insert char from tail to head
     	for(int j=length-1,k=newlength-1;j>=0;j--,k--){
+    		System.out.print("j: "+j);
+    		System.out.println(" k: "+k);
     		if(copyStr[j]==' '){
     			string[k]='0';
     			string[k-1]='2';
