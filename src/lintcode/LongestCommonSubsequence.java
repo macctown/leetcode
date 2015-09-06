@@ -32,6 +32,7 @@ public class LongestCommonSubsequence {
     		for(int j=1;j<=B.length();j++){
     			//if A,B has same letter in same position, the common equals the last common+1
     			if(A.charAt(i-1)==B.charAt(j-1)){
+    				//note:[i-1] [j-1] means the elements before[i][j]
     				common[i][j] = common[i-1][j-1]+1;
     			}
     			else{
