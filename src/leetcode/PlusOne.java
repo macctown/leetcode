@@ -1,6 +1,9 @@
 package leetcode;
 
 public class PlusOne {
+	
+	//use loop to check every digit from end to beginning
+	//TC: O(n)
 	public static int[] plusOne(int[] digits) {
 		//corner case
         if(digits==null || digits.length==0){

@@ -3,6 +3,15 @@ package leetcode;
 import java.util.HashMap;
 
 public class SortColors {
+	
+	
+	
+	public static void main(String args[]){
+		int[] test1 = {2,0};
+		sortColors(test1);
+	}
+	
+	
 	public static void sortColors(int[] nums) {
 		//corner case
 		if(nums==null||nums.length==0){
@@ -47,10 +56,4 @@ public class SortColors {
         
         
     }
-	
-	
-	public static void main(String args[]){
-		int[] test1 = {2,0};
-		sortColors(test1);
-	}
 }
