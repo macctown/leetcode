@@ -51,10 +51,56 @@ public class ThreeSum {
 
     }
 	
+	public static List<List<Integer>> threeSum2(int[] nums) {
+		List<List<Integer>> res = new ArrayList<List<Integer>>();
+		if(nums==null||nums.length==0){
+			return res;
+		}
+		List<Integer> tmp = new ArrayList<Integer>();
+		Arrays.sort(nums);
+		
+		for(int i=0;i<nums.length-2;i++){
+			//i==0 here is to avoid i-1 when i=0
+			if(i==0||nums[i]>nums[i-1]){
+				int left = i+1;
+				int right = nums.length-1;
+				while(left<right){
+					int sum = nums[left]+nums[right]+nums[i];
+					if(sum<0){
+						left++;
+					}
+					else if(sum>0){
+						right--;
+					}
+					else{
+						//note: the order here
+						tmp.add(nums[i]);
+						tmp.add(nums[left]);
+						tmp.add(nums[right]);
+						res.add(tmp);
+						left++;
+						right--;
+						//skip the same elements
+						while(left<right&&nums[left]==nums[left-1]){
+							left++;
+						}
+						while(left<right&&nums[right]==nums[right+1]){
+							right--;
+						}
+					}
+				}
+				
+				
+			}
+		}
+		
+		return res;
+	}
+	
 
 	public static void main(String args[]){
 		int[] test1 = {-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6};
-		List<List<Integer>> res = threeSum(test1);
+		List<List<Integer>> res = threeSum2(test1);
 		for(int i=0;i<res.size();i++){
 	    	  for(int j=0;j<res.get(i).size();j++){
 	    		  System.out.print(" "+res.get(i).get(j));

@@ -21,6 +21,19 @@ public class FindDuplicateNumber {
         return fast;
     }
 	
+	//binary search to find the elements have more counts
+	public int findDuplicate2(int[] nums) {
+        if(nums.length==0||nums==null){
+        	return -1;
+        }
+        
+        
+        
+        
+        
+        
+    }
+	
 	public static void main(String args[]){
 		
 	}
