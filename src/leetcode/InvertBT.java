@@ -45,4 +45,16 @@ public class InvertBT {
         
         return root;
     }
+	
+	public static TreeNode invertTree2(TreeNode root) {
+		if(root == null){
+			return null;
+		}
+		
+		TreeNode tmp = root.left;
+		root.left = invertTree2(root.right);
+		root.right = invertTree2(tmp);
+		
+		return root;
+	}
 }
