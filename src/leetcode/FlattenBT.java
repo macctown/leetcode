@@ -52,5 +52,6 @@ public class FlattenBT {
     	test21.left = test31;
     	test21.right = test32;
     	preorder(test);
+    	
 	}
 }
