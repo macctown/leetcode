@@ -13,7 +13,7 @@ public class KthSmallestElementInBST {
 	      TreeNode(int x) { val = x; }
 	 }
 	
-	//inorder
+	//inorder list res is a ascending arr, and return the kth from end
 	public static int kthSmallest(TreeNode root, int k) {
         if(root == null){
         	return -1;
