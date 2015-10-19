@@ -15,6 +15,7 @@ public class LowestCommonAncestorOfBT {
 	
 	//get inorder traversal from p to q
 	//get postorder traversal 
+	//loop from postorder from back to start, then find the first on in the inorder list
 	public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null){
         	return null;
