@@ -9,7 +9,9 @@ public class BalancedBinaryTree {
 	      TreeNode right;
 	      TreeNode(int x) { val = x; }
 	 }
-	
+	//check from root, then every left and right, if get differ more than one, return -1
+	//-1 means false
+	//if the differ <2, return the max differ
 	public static boolean isBalanced(TreeNode root) {
 		return checkBalanced(root)==-1?false:true;
     }
