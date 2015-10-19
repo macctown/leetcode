@@ -29,6 +29,30 @@ public class Search2DMatrix {
 	
 	//2. use binary search, start = 0, end = m*n-1. Think the multi-row matrix as a one
 	// hisRow = num/col, hisCol = num%col;
+	public static boolean searchMatrix2(int[][] matrix, int target) {  
+		if(matrix==null || matrix.length == 0){
+			return false;
+		}
+		
+		int col = matrix[0].length;
+		
+		int lowerLimit = 0;
+		int higherLimit = matrix.length * matrix[0].length-1;
+		
+		while(lowerLimit <= higherLimit){
+			int mid = lowerLimit + (higherLimit - lowerLimit)/2;
+			if(matrix[mid/col][mid%col] < target){
+				lowerLimit = mid+1;
+			}
+			else if(matrix[mid/col][mid%col] > target){
+				higherLimit = mid-1;
+			}
+			else{
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	
 	public static void main(String args[]){
@@ -48,7 +72,10 @@ public class Search2DMatrix {
 	    matrix[2][2] = 34;
 	    matrix[2][3] = 50;
 	    
-	    System.out.println(searchMatrix(matrix, 0));
+	    int[][] matrix2 = new int[1][1];
+	    matrix2[0][0] = 1;
+	    System.out.println(10 << 0);
+	    System.out.println(searchMatrix(matrix2, 2));
 						
 	}
 }
