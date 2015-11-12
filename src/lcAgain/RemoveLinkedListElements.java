@@ -10,28 +10,22 @@ public class RemoveLinkedListElements {
 	}
 	
 	public static ListNode removeElements(ListNode head, int val) {
-		 if(head == null){
-	            return head;
-	        }
-	        
-	        ListNode dummy = new ListNode(Integer.MAX_VALUE);
+		 ListNode dummy = new ListNode(Integer.MIN_VALUE); 	
+		ListNode scan = head;
+	        ListNode pre = new ListNode(Integer.MIN_VALUE); 
+	        pre = dummy;
 	        dummy.next = head;
-	        ListNode cur = dummy;
-	        ListNode scan = cur.next;
 	        
-	        while(scan != null){
-	            if(scan.val != val){
-	                scan = scan.next;
-	                cur = cur.next;
+	        while(scan!=null){
+	            if(scan.val == val){
+	                pre.next = pre.next.next;
 	            }
-	            else if(scan.val == val){
-	                while(scan!=null && scan.val == val ){
-	                    scan = scan.next;
-	                }
-	                cur.next = scan;
+	            else{
+	                pre = pre.next;
 	            }
+	            
+	            scan = scan.next;
 	        }
-	        
 	        
 	        return dummy.next;
     }
@@ -45,13 +39,13 @@ public class RemoveLinkedListElements {
     	ListNode l6 = new ListNode(6);
     	
 
-    	l1.next = l2;
+    	//l1.next = l2;
     	l2.next = l3;
     	l3.next = l4;
     	l4.next = l5;
     	l5.next = l6;
     	
-    	ListNode res = removeElements(l1,6);
+    	ListNode res = removeElements(l1,1);
     	
     	while(res!=null){
     		System.out.println(res.val);
