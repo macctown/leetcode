@@ -38,7 +38,7 @@ public class PlusOne {
 	
 	
 	public static void main(String args[]){
-		int[] test = {1,2,5};
+		int[] test = {1,2,9};
 		int[] test2 = {9,9};
 		int[] res1 = plusOne(test);
 		int[] res2 = plusOne(test2);
