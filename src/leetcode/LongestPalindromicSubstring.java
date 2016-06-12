@@ -7,7 +7,7 @@ public class LongestPalindromicSubstring {
         	return s;
         }
 		
-		for(int i=0;i<s.length()*2-1;i++){
+		for(int i=0;i<s.length()-1;i++){
 			String tmp = helper(s, i, i);
 			if(tmp.length()>res.length()){
 				res = tmp;
